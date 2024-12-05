@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import FirebaseAuth
 
 class ToDoItemLocalManager {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -20,12 +21,14 @@ class ToDoItemLocalManager {
     }
     
     func createToDoItem(name: String, priority: Int) -> ToDoItem {
+        let userId = Auth.auth().currentUser?.uid
         let newToDoItem = ToDoItem(context: context)
         newToDoItem.name = name
         newToDoItem.priority = Int32(priority)
         newToDoItem.creationDate = Date()
         newToDoItem.done = false
         newToDoItem.isSynced = false
+        newToDoItem.userId = userId
         
         saveContext()
         return newToDoItem
@@ -38,7 +41,9 @@ class ToDoItemLocalManager {
     }
 
     func getItems() -> [ToDoItem] {
+        let userId = Auth.auth().currentUser?.uid
         let request: NSFetchRequest<ToDoItem> = ToDoItem.fetchRequest()
+        request.predicate = NSPredicate(format:"userId == %@", userId!)
         request.sortDescriptors = [
             NSSortDescriptor(key: #keyPath(ToDoItem.priority), ascending: false),
             NSSortDescriptor(key: #keyPath(ToDoItem.name), ascending: true)
@@ -102,7 +107,6 @@ class ToDoItemLocalManager {
     }
     
     func mapToDoItemToToDoItemDto(item: ToDoItem) -> ToDoItemDto {
-        print(item)
         return ToDoItemDto(
             name: item.name!,
             priority: Int(item.priority),

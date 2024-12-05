@@ -12,7 +12,6 @@ class MainScreenViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if Auth.auth().currentUser != nil {
-            print("yataaaaaaa")
             self.performSegue(withIdentifier: K.Segue.alreadyLoggedInSegue, sender: nil)
         }
     }

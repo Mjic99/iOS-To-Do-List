@@ -86,9 +86,7 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            print("items from firebase \(items.count)")
         }
-        print("items from coredata \(self.toDoItems.count)")
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

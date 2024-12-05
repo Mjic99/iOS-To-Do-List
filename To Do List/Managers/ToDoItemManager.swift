@@ -23,16 +23,15 @@ class ToDoItemManager {
         do {
             let unsyncedLocalItems = localItems.filter { !$0.isSynced }
             for localItem in unsyncedLocalItems {
-                print("local item \(localItem)")
                 if let documentId = localItem.documentId { //the local item also exists on firebase
                     if localItem.toBeDeleted { //item has to be deleted from firebase
                         try await firebaseManager.deleteToDoItem(documentId: documentId)
                         localManager.deleteItem(documentId: documentId)
                     } else { //we update the item with what we have locally
                         try await firebaseManager.updateToDoItem(item: localItem)
+                        localManager.markItemAsSynced(item: localItem, documentId: documentId)
                     }
                 } else { //the local item is not on firebase yet
-                    print("not on fb \(localItem)")
                     if localItem.toBeDeleted { //just delete the local item
                         localManager.deleteItem(item: localItem)
                     } else { //create the item on firebase
