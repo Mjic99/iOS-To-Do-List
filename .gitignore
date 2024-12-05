@@ -1,0 +1,91 @@
+# Xcode
+build/
+DerivedData/
+*.xcworkspace
+!Pods/**/support/xcconfig/*.xcconfig
+!*.xcodeproj/**/xcconfig-overrides/*.xcconfig
+xcuserdata/
+*.xcodeproj/project.xcworkspace/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/contents.xcworkspacedata
+*.xcworkspace/xcshareddata/
+*.xcworkspace/xcuserdata/
+*.xcscheme
+
+# CocoaPods
+Pods/
+*.lock
+!.swiftpm/
+sourcePackages/
+.build/
+
+# Carthage
+Carthage/Build/
+
+# Swift Package Manager
+.swiftpm/xcode/related-sorting-items.json
+Package.resolved
+build/
+.swiftpm/repositories/
+.build/
+.swiftpm/xcode/Contents/
+DerivedData/
+sourcePackages/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Firebase
+GoogleService-Info.plist
+
+# App-specific
+*.ipa
+*.app.dSYM.zip
+*.app.dSYM
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Visual Studio Code
+.vscode/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Backup files
+# ====================
+*.bak
+*.backup
+*.orig
+*.tmp
+*~ 
+
+# Logs
+*.log
+*.log.*
+
+# Generated files
+*.swiftinterface
+*.swiftmodule
+
+# Temporary files
+*~ 
+*.tmp
+*.swp
+
+# Archives
+*.xcarchive
+
+# Ghost files
+.env
+
+# Prevent committing environment files
+.env.*.local
+.env.*.production

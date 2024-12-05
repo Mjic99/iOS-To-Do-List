@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EDA6B6E32CF6E9210038C322 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EDA6B6E22CF6E9210038C322 /* FirebaseAuth */; };
+		EDA6B6E52CF6E9210038C322 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = EDA6B6E42CF6E9210038C322 /* FirebaseCore */; };
+		EDA6B6E72CF6E9210038C322 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EDA6B6E62CF6E9210038C322 /* FirebaseFirestore */; };
+		EDA6B6F62CF8301C0038C322 /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = EDA6B6F52CF8301C0038C322 /* SwipeCellKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		ED6E41782CEF08E200960FBD /* To Do List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Do List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDA6B6F62CF8301C0038C322 /* SwipeCellKit in Frameworks */,
+				EDA6B6E52CF6E9210038C322 /* FirebaseCore in Frameworks */,
+				EDA6B6E32CF6E9210038C322 /* FirebaseAuth in Frameworks */,
+				EDA6B6E72CF6E9210038C322 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +89,10 @@
 			);
 			name = "To Do List";
 			packageProductDependencies = (
+				EDA6B6E22CF6E9210038C322 /* FirebaseAuth */,
+				EDA6B6E42CF6E9210038C322 /* FirebaseCore */,
+				EDA6B6E62CF6E9210038C322 /* FirebaseFirestore */,
+				EDA6B6F52CF8301C0038C322 /* SwipeCellKit */,
 			);
 			productName = "To Do List";
 			productReference = ED6E41782CEF08E200960FBD /* To Do List.app */;
@@ -107,6 +122,10 @@
 			);
 			mainGroup = ED6E416F2CEF08E200960FBD;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				EDA6B6E12CF6E9210038C322 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				EDA6B6F42CF8301C0038C322 /* XCRemoteSwiftPackageReference "SwipeCellKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ED6E41792CEF08E200960FBD /* Products */;
 			projectDirPath = "";
@@ -147,6 +166,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "To Do List/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "To Do List";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -174,6 +194,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "To Do List/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "To Do List";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -333,6 +354,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDA6B6E12CF6E9210038C322 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.5.0;
+			};
+		};
+		EDA6B6F42CF8301C0038C322 /* XCRemoteSwiftPackageReference "SwipeCellKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwipeCellKit/SwipeCellKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDA6B6E22CF6E9210038C322 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDA6B6E12CF6E9210038C322 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		EDA6B6E42CF6E9210038C322 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDA6B6E12CF6E9210038C322 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		EDA6B6E62CF6E9210038C322 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDA6B6E12CF6E9210038C322 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		EDA6B6F52CF8301C0038C322 /* SwipeCellKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDA6B6F42CF8301C0038C322 /* XCRemoteSwiftPackageReference "SwipeCellKit" */;
+			productName = SwipeCellKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ED6E41702CEF08E200960FBD /* Project object */;
 }
